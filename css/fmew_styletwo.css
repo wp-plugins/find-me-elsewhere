@@ -1,0 +1,106 @@
+#fmew  ul {
+	padding:0;
+	margin:0;
+	overflow:hidden;
+}
+#fmew ul li{
+	float:left;
+	padding:10px;
+	list-style:none;
+	margin:0;
+}
+#fmew ul li a:hover{
+	text-decoration:none;
+}
+#fmew ul .first{
+	padding:10px 10px 10px 0;
+	clear:both;
+}
+#fmew ul li a{
+	text-indent:-999px;
+}
+#fmew ul li .FaceBook{
+	display:block; 	
+	width:20px; 	
+	height:20px;
+	background:url(../images/facebook.gif) 0 50% no-repeat;
+}
+#fmew ul li .FriendFeed{
+	display:block; 	
+	width:20px; 	
+	height:20px;
+	background:url(../images/ff.png) 0 50% no-repeat;
+}
+#fmew ul li .LinkedIn{
+	display:block; 	
+	width:20px; 	
+	height:20px;
+	background:url(../images/linkedin.png) 0 50% no-repeat;
+}
+#fmew ul li .MySpace{
+	display:block; 	
+	width:20px; 	
+	height:20px;
+	background:url(../images/myspace.png) 0 50% no-repeat;
+}
+#fmew ul li .Friendster{
+	display:block; 	
+	width:20px; 	
+	height:20px;
+	background:url(../images/friendster.png) 0 50% no-repeat;
+}
+#fmew ul li .Orkut{
+	display:block; 	
+	width:20px; 	
+	height:20px;
+	background:url(../images/orkut.png) 0 50% no-repeat;
+}
+#fmew ul li .Zorpia{
+	display:block; 	
+	width:20px; 	
+	height:20px;
+	background:url(../images/zorpia.png) 0 50% no-repeat;
+}
+#fmew ul li .Netlog{
+	display:block; 	
+	width:20px; 	
+	height:20px;
+	background:url(../images/netlog.png) 0 50% no-repeat;
+}
+#fmew ul li .Bebo{
+	display:block; 	
+	width:20px; 	
+	height:20px;
+	background:url(../images/bebo.png) 0 50% no-repeat;
+}
+#fmew ul li .Hi5{
+	display:block; 
+	width:20px; 	
+	height:20px;
+	background:url(../images/hi5.png) 0 50% no-repeat;
+}
+#fmew ul li .PerfSpot{
+	display:block; 	
+	width:20px; 	
+	height:20px;
+	background:url(../images/perfspot.png) 0 50% no-repeat;
+}
+#fmew ul li .Twitter{
+	display:block; 	
+	width:20px; 	
+	height:20px;
+	background:url(../images/twitter.png) 0 50% no-repeat;
+}
+#fmew h3{
+	margin-bottom:0;
+	font-size:14px;
+	cursor:pointer;
+}
+#fmew ul{
+	padding:5px;
+	display:none;
+}
+#fmew li{
+	background:none;
+	list-style:none;
+}
