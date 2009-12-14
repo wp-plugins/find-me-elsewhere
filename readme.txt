@@ -9,6 +9,8 @@ Stable tag: trunk
 This plugin let you shown all your social network icons in a widget
 
 == Description ==
+Please do not use plugin now. We have fonud some bugs after we published the beta version and we are debuging . Please wait for about 24hours . Thank you for understanding.
+
 This plugin let you shown all your social network icons in a widget
 
 If you have any problem on using the plugin,please ask for help on our <a href="http://www.wpease.com/support/viewforum.php?f=2" target="_blank">Support forum</a>.
