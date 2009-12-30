@@ -1,18 +1,18 @@
 jQuery(document).ready(function(){
 	jQuery(".select").toggle(function(){
 		jQuery(".add").find("ul").show();
-		jQuery(".select").css('background','#FFFFFF url(../wp-content/plugins/find-me-else-where/images/select_click.png) no-repeat');
+		jQuery(".select").css('background','#FFFFFF url(../wp-content/plugins/find-me-elsewhere/images/select_click.png) no-repeat');
 	},
 	function(){
 		jQuery(".add").find("ul").hide();
-		jQuery(".select").css('background','#FFFFFF url(../wp-content/plugins/find-me-else-where/images/select.png) no-repeat');
+		jQuery(".select").css('background','#FFFFFF url(../wp-content/plugins/find-me-elsewhere/images/select.png) no-repeat');
 	});
 	jQuery("div.add > ul").find("li").click(function(){
 		var cla = jQuery(this).attr("class");
 		var text = jQuery(this).text();
 		jQuery(".select").html('<span class="'+cla+'">'+text+'</span>');
 		jQuery("#category").val(text);
-		jQuery(".select").css('background','#FFFFFF url(../wp-content/plugins/find-me-else-where/images/select.png) no-repeat');
+		jQuery(".select").css('background','#FFFFFF url(../wp-content/plugins/find-me-elsewhere/images/select.png) no-repeat');
 		jQuery(".add").find("ul").hide();
 	});
 	jQuery("#save_liststyle").click(function(){
@@ -24,20 +24,20 @@ jQuery(document).ready(function(){
 		}
 		jQuery.ajax({
 			type: "POST",
-			url: "../wp-content/plugins/find-me-else-where/find_me_else_where_handle.php",
+			url: "../wp-content/plugins/find-me-elsewhere/find_me_else_where_handle.php",
 			data: "action=save_style&style="+radio.eq(j).val(),
 			beforeSend: function(){
 				jQuery("#stylemsg").show();
-				jQuery("#stylemsg").html("<img src='../wp-content/plugins/find-me-else-where/images/ajaxloading.gif'/>waiting......");
+				jQuery("#stylemsg").html("<img src='../wp-content/plugins/find-me-elsewhere/images/ajaxloading.gif'/>waiting......");
 			},
 			success: function(msg){
 				if(msg == 1){
 					jQuery("#stylemsg").show();
-					jQuery("#stylemsg").html("<img src='../wp-content/plugins/find-me-else-where/images/ok.gif'/>ok");
+					jQuery("#stylemsg").html("<img src='../wp-content/plugins/find-me-elsewhere/images/ok.gif'/>ok");
 					setTimeout("re()",500);
 				}else{alert(msg);
 					jQuery("#stylemsg").show();
-					jQuery("#stylemsg").html("<img src='../wp-content/plugins/find-me-else-where/images/use.gif'/>"+msg);
+					jQuery("#stylemsg").html("<img src='../wp-content/plugins/find-me-elsewhere/images/use.gif'/>"+msg);
 				}
 			}
 		}); 
@@ -51,20 +51,20 @@ jQuery(document).ready(function(){
 		}
 		jQuery.ajax({
 			type: "POST",
-			url: "../wp-content/plugins/find-me-else-where/find_me_else_where_handle.php",
+			url: "../wp-content/plugins/find-me-elsewhere/find_me_else_where_handle.php",
 			data: "action=save_display&display="+radio.eq(j).val(),
 			beforeSend: function(){
 				jQuery("#displaymsg").show();
-				jQuery("#displaymsg").html("<img src='../wp-content/plugins/find-me-else-where/images/ajaxloading.gif'/>waiting......");
+				jQuery("#displaymsg").html("<img src='../wp-content/plugins/find-me-elsewhere/images/ajaxloading.gif'/>waiting......");
 			},
 			success: function(msg){
 				if(msg == 1){
 					jQuery("#displaymsg").show();
-					jQuery("#displaymsg").html("<img src='../wp-content/plugins/find-me-else-where/images/ok.gif'/>ok");
+					jQuery("#displaymsg").html("<img src='../wp-content/plugins/find-me-elsewhere/images/ok.gif'/>ok");
 					setTimeout("re()",500);
 				}else{
 					jQuery("#displaymsg").show();
-					jQuery("#displaymsg").html("<img src='../wp-content/plugins/find-me-else-where/images/use.gif'/>"+msg);
+					jQuery("#displaymsg").html("<img src='../wp-content/plugins/find-me-elsewhere/images/use.gif'/>"+msg);
 				}
 			}
 		}); 
@@ -95,16 +95,16 @@ function addnetwork(){
 	}
 	jQuery.ajax({
 			type: "POST",
-			url: "../wp-content/plugins/find-me-else-where/find_me_else_where_handle.php",
+			url: "../wp-content/plugins/find-me-elsewhere/find_me_else_where_handle.php",
 			data: "action=add&order="+order+"&title="+title+"&url="+url+"&category="+category,
 			beforeSend: function(){
 				jQuery("#msg").show();
-				jQuery("#msg").html("<img src='../wp-content/plugins/find-me-else-where/images/ajaxloading.gif'/>waiting......");
+				jQuery("#msg").html("<img src='../wp-content/plugins/find-me-elsewhere/images/ajaxloading.gif'/>waiting......");
 			},
 			success: function(msg){
 				if(msg == 1){
 					jQuery("#msg").show();
-					jQuery("#msg").html("<img src='../wp-content/plugins/find-me-else-where/images/ok.gif'/>ok");
+					jQuery("#msg").html("<img src='../wp-content/plugins/find-me-elsewhere/images/ok.gif'/>ok");
 					jQuery("#category").val('');
 					jQuery("#order").val('');
 					jQuery("#title").val('');
@@ -112,7 +112,7 @@ function addnetwork(){
 					setTimeout("re()",500);
 				}else{
 					jQuery("#msg").show();
-					jQuery("#msg").html("<img src='../wp-content/plugins/find-me-else-where/images/use.gif'/>"+msg);
+					jQuery("#msg").html("<img src='../wp-content/plugins/find-me-elsewhere/images/use.gif'/>"+msg);
 				}
 			}
 	}); 
@@ -120,31 +120,31 @@ function addnetwork(){
 function re(){
 	window.location.reload();
 }
-function del(id){
+function del(key){
 	if(confirm("You are about to delete it 'Cancel' to stop, 'OK' to delete.")){
 		jQuery.ajax({
 			type: "POST",
-			url: "../wp-content/plugins/find-me-else-where/find_me_else_where_handle.php",
-			data: "action=del&id="+id,
+			url: "../wp-content/plugins/find-me-elsewhere/find_me_else_where_handle.php",
+			data: "action=del&key="+key,
 			beforeSend: function(){
 				jQuery("#listmsg").show();
-				jQuery("#listmsg").html("<img src='../wp-content/plugins/find-me-else-where/images/ajaxloading.gif'/>waiting......");
+				jQuery("#listmsg").html("<img src='../wp-content/plugins/find-me-elsewhere/images/ajaxloading.gif'/>waiting......");
 			},
 			success: function(msg){
 				if(msg == 1){
 					jQuery("#listmsg").show();
-					jQuery("#listmsg").html("<img src='../wp-content/plugins/find-me-else-where/images/ok.gif'/>ok");
+					jQuery("#listmsg").html("<img src='../wp-content/plugins/find-me-elsewhere/images/ok.gif'/>ok");
 					setTimeout("re()",500);
 				}else{
 					jQuery("#listmsg").show();
-					jQuery("#listmsg").html("<img src='../wp-content/plugins/find-me-else-where/images/use.gif'/>"+msg);
+					jQuery("#listmsg").html("<img src='../wp-content/plugins/find-me-elsewhere/images/use.gif'/>"+msg);
 				}
 			}
 		}); 
 	}
 }
 
-function edit(id){
+function edit(key){
 	var order = jQuery("#mod_order").val();
 	var title = jQuery("#mod_title").val();
 	var url = jQuery("#mod_url").val();
@@ -163,22 +163,22 @@ function edit(id){
 		url = encodeURIComponent(url);
 	}
 	jQuery.ajax({
-			type: "POST",
-			url: "../wp-content/plugins/find-me-else-where/find_me_else_where_handle.php",
-			data: "action=edit&order="+order+"&title="+title+"&url="+url+"&id="+id,
-			beforeSend: function(){
+		type: "POST",
+		url: "../wp-content/plugins/find-me-elsewhere/find_me_else_where_handle.php",
+		data: "action=edit&order="+order+"&title="+title+"&url="+url+"&key="+key,
+		beforeSend: function(){
+			jQuery("#listmsg").show();
+			jQuery("#listmsg").html("<img src='../wp-content/plugins/find-me-else-where/images/ajaxloading.gif'/>waiting......");
+		},
+		success: function(msg){
+			if(msg == 1){
 				jQuery("#listmsg").show();
-				jQuery("#listmsg").html("<img src='../wp-content/plugins/find-me-else-where/images/ajaxloading.gif'/>waiting......");
-			},
-			success: function(msg){
-				if(msg == 1){
-					jQuery("#listmsg").show();
-					jQuery("#listmsg").html("<img src='../wp-content/plugins/find-me-else-where/images/ok.gif'/>ok");
-					setTimeout("re()",500);
-				}else{
-					jQuery("#listmsg").show();
-					jQuery("#listmsg").html("<img src='../wp-content/plugins/find-me-else-where/images/use.gif'/>"+msg);
-				}
+				jQuery("#listmsg").html("<img src='../wp-content/plugins/find-me-elsewhere/images/ok.gif'/>ok");
+				setTimeout("re()",500);
+			}else{
+				jQuery("#listmsg").show();
+				jQuery("#listmsg").html("<img src='../wp-content/plugins/find-me-elsewhere/images/use.gif'/>"+msg);
 			}
+		}
 	}); 
 }

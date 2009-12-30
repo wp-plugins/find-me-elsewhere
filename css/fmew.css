@@ -82,40 +82,40 @@
 	text-indent:-999px;
 }
 #fmew_admin .FaceBook{
-	background:url(../images/facebook.gif) 10px 50% no-repeat;
+	background:url(../images/facebook_16.png) 10px 50% no-repeat;
 }
 #fmew_admin .FriendFeed{
-	background:url(../images/ff.png) 10px 50% no-repeat;
+	background:url(../images/friendfeed_16.png) 10px 50% no-repeat;
 }
 #fmew_admin .LinkedIn{
-	background:url(../images/linkedin.png) 10px 50% no-repeat;
+	background:url(../images/linkedin_16.png) 10px 50% no-repeat;
 }
 #fmew_admin .MySpace{
-	background:url(../images/myspace.png) 10px 50% no-repeat;
+	background:url(../images/myspace_16.png) 10px 50% no-repeat;
 }
 #fmew_admin .Friendster{
-	background:url(../images/friendster.png) 10px 50% no-repeat;
+	background:url(../images/friendster_16.png) 10px 50% no-repeat;
 }
 #fmew_admin .Orkut{
-	background:url(../images/orkut.png) 10px 50% no-repeat;
-}
-#fmew_admin .Zorpia{
-	background:url(../images/zorpia.png) 10px 50% no-repeat;
-}
-#fmew_admin .Netlog{
-	background:url(../images/netlog.png) 10px 50% no-repeat;
+	background:url(../images/orkut_16.png) 10px 50% no-repeat;
 }
 #fmew_admin .Bebo{
-	background:url(../images/bebo.png) 10px 50% no-repeat;
+	background:url(../images/bebo_16.png) 10px 50% no-repeat;
 }
 #fmew_admin .Hi5{
-	background:url(../images/hi5.png) 10px 50% no-repeat;
-}
-#fmew_admin .PerfSpot{
-	background:url(../images/perfspot.png) 10px 50% no-repeat;
+	background:url(../images/hi5_16.png) 10px 50% no-repeat;
 }
 #fmew_admin .Twitter{
-	background:url(../images/twitter.png) 10px 50% no-repeat;
+	background:url(../images/twitter_16.png) 10px 50% no-repeat;
+}
+#fmew_admin .Flickr{
+	background:url(../images/flickr_16.png) 10px 50% no-repeat;
+}
+#fmew_admin .Digg{
+	background:url(../images/digg_alt_16.png) 10px 50% no-repeat;
+}
+#fmew_admin .Delicious{
+	background:url(../images/delicious_16.png) 10px 50% no-repeat;
 }
 #fmew_admin .list tr td a.del{
 	display:block;
