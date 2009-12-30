@@ -8,58 +8,42 @@ Author:Wpease Team.
 */
 require(ABSPATH.'wp-config.php');
 class FindMeElseWhere{
-	public function __construct(){
-		global $table_prefix;
-		$mysqli = @new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
-		if(@$mysqli->errno !== 0){
-			exit('can not connect mysql');
-		}
-		$query = 'SELECT * FROM '.$table_prefix.'find_me_else_where';
-		$result = $mysqli->query($query);
-		if(!$result){
-			$table_create = "CREATE TABLE ".$table_prefix."find_me_else_where( 
-							id INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
-							show_order INT NOT NULL,
-							title VARCHAR(50) NOT NULL,
-							category VARCHAR(50) NOT NULL,
-							url VARCHAR(100) NOT NULL);";
-			$result_table = @$mysqli->query($table_create);
-			if(!$result_table){
-				exit('create table failure');
-			}
-		}
-		$mysqli->close();
-	}
 	public function add_jquery(){
 ?>
 		<script type="text/javascript">
 			if(typeof(jQuery) == 'undefined'){
 				var jquery_script = document.createElement("script");
 			    jquery_script .type = "text/javascript";
-			    jquery_script .src = "<?php echo WP_PLUGIN_URL;?>/find-me-else-where/script/jquery-1.3.2.min.js";
+			    jquery_script .src = "<?php echo WP_PLUGIN_URL;?>/find-me-elsewhere/script/jquery-1.3.2.min.js";
 		   	    document.getElementsByTagName("head")[0].appendChild(jquery_script);
 			}
 		</script>
 <?php }
 	public function add_cssfile(){
-		wp_register_style('admincss', WP_PLUGIN_URL.'/find-me-else-where/css/fmew.css');
+		wp_register_style('admincss', WP_PLUGIN_URL.'/find-me-elsewhere/css/fmew.css');
 		wp_enqueue_style('admincss');
 	}
 	public function add_style_cssfile(){
-		$currentstyle = get_option('fmew_current_style');
-		$css_file = $currentstyle.'.css';
-		wp_register_style('fmew_sytle_css', WP_PLUGIN_URL.'/find-me-else-where/css/'.$css_file);
+		if($currentstyle = get_option('fmew_current_style')){
+			$css_file = $currentstyle.'.css';
+		}else{
+			$css_file = 'fmew_default.css';
+		}
+		wp_register_style('fmew_sytle_css', WP_PLUGIN_URL.'/find-me-elsewhere/css/'.$css_file);
 		wp_enqueue_style('fmew_sytle_css');
 	}
 
 	public function add_admin_jsfile(){
-		wp_register_script('fmewscript',WP_PLUGIN_URL.'/find-me-else-where/script/fmew.js',array('jquery'));
+		wp_register_script('fmewscript',WP_PLUGIN_URL.'/find-me-elsewhere/script/fmew.js',array('jquery'));
 		wp_enqueue_script('fmewscript');
 	}
 	public function add_style_jsfile(){
-		$currentstyle = get_option('fmew_current_style');
-		$js_file = $currentstyle.'.js';
-		wp_register_script('fmew_sytle_js',WP_PLUGIN_URL.'/find-me-else-where/script/'.$js_file);
+		if($currentjs = get_option('fmew_current_style')){
+			$js_file = $currentjs.'.js';
+		}else{
+			$js_file = 'fmew_default.js';
+		}
+		wp_register_script('fmew_sytle_js',WP_PLUGIN_URL.'/find-me-elsewhere/script/'.$js_file);
 		wp_enqueue_script('fmew_sytle_js');
 	}
 	public function mt_add_pages(){
@@ -84,48 +68,38 @@ class FindMeElseWhereWidget extends WP_Widget {
     }
 
     function widget($args, $instance) {	
-    	global $table_prefix;
-    	$mysqli = @new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
-		if(@$mysqli->errno !== 0){
-			exit('can not connect mysql');
-		}
-    	$query = "SELECT * FROM {$table_prefix}find_me_else_where ORDER BY show_order";
-		$result = $mysqli->query($query);
-		$num = $result->num_rows;
-		if($num > 0){
-			$i = 0;
-			while($row = $result->fetch_assoc()){
-				foreach($row as $key => $value){
-					$links[$i][$key] = $value;
-				}
-				$i++;
-			}
-		}	
-		$mysqli->close();
         extract( $args );
         $currentstyle = get_option('fmew_current_style');
         $display = get_option('fmew_message_option');
-        if(isset($links)){
-        	echo '<div id="fmew">';
-				echo '<h3>Find me else where</h3>';
-				echo '<ul>';
-	        	for($i = 0; $i < count($links); $i++){
-	        		if(isset($instance['number']) && $instance['number'] != ''){
-	        			$number = $instance['number'];
-	        		}else{
-	        			$number = 5;
-	        		}
-	        		if(($i % $number) == 0){
-		        		echo '<li class="first"><a href="'.urldecode($links[$i]['url']).'" title="'.$links[$i]['title'].'" class="'.$links[$i]['category'].'">'.$links[$i]['title'].'</a></li>';
-	        		}else{
-	        			echo '<li><a href="'.urldecode($links[$i]['url']).'" title="'.$links[$i]['title'].'" class="'.$links[$i]['category'].'">'.$links[$i]['title'].'</a></li>';
-	        		}
-	        	}
-	        	echo '</ul>';
-	        	if($display == 'yes'){
-	        		echo '<a href="#" title="">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>';
-	        	}
-        	echo '</div>';
+        $networklinks = get_option('fmew_networklinks_option');
+	    if(count($networklinks) > 0){
+	    	$arr = array();
+	    	foreach($networklinks as $key => $value){
+	    		$arr[$value['order'].$key] = $key;
+	    	}
+	    	ksort($arr);
+    		echo '<div id="fmew">';
+			echo '<h3>Find me else where</h3>';
+			echo '<ul class="network">';
+			$i = 0;
+        	foreach ($arr as $key){
+        		if(isset($instance['number']) && $instance['number'] != ''){
+        			$number = $instance['number'];
+        		}else{
+        			$number = 5;
+        		}
+        		if(($i % $number) == 0){
+	        		echo '<li class="first"><a href="'.urldecode($networklinks[$key]['url']).'" title="'.$networklinks[$key]['title'].'" class="'.$networklinks[$key]['category'].'">'.$networklinks[$key]['title'].'</a></li>';
+        		}else{
+        			echo '<li><a href="'.urldecode($networklinks[$key]['url']).'" title="'.$networklinks[$key]['title'].'" class="'.$networklinks[$key]['category'].'">'.$networklinks[$key]['title'].'</a></li>';
+        		}
+        		$i++;
+        	}
+        	echo '</ul>';
+        	if($display == 'yes'){
+        		echo '<a class="getfmew" href="http://wpease.com/find-me-else-where" title="">Get this plugin for my blog</a>';
+        	}
+    		echo '</div>';
         }           
     }
     function update($new_instance, $old_instance) {				
@@ -152,21 +126,23 @@ add_action('widgets_init', create_function('', 'return register_widget("FindMeEl
 
 class FmewOptions{
 	function saveoption(){
+		$arr_sites = array();
+		$arr_sites[0] = array('network' => 'FaceBook');
+		$arr_sites[1] = array('network' => 'FriendFeed');
+		$arr_sites[2] = array('network' => 'MySpace');
+		$arr_sites[3] = array('network' => 'Friendster');
+		$arr_sites[4] = array('network' => 'LinkedIn');
+		$arr_sites[5] = array('network' => 'Orkut');
+		$arr_sites[6] = array('network' => 'Bebo');
+		$arr_sites[7] = array('network' => 'Hi5');
+		$arr_sites[8] = array('network' => 'Twitter');
+		$arr_sites[9] = array('network' => 'Flickr');
+		$arr_sites[10] = array('network' => 'Digg');
+		$arr_sites[11] = array('network' => 'Delicious');
 		if(!get_option('fmew_network_option')){
-			$arr_sites = array();
-			$arr_sites[0] = array('network' => 'FaceBook', 'img' => 'facebook.gif');
-			$arr_sites[1] = array('network' => 'FriendFeed', 'img' => 'ff.png');
-			$arr_sites[2] = array('network' => 'MySpace', 'img' => 'myspace.png');
-			$arr_sites[3] = array('network' => 'Friendster', 'img' => 'friendster.png');
-			$arr_sites[4] = array('network' => 'LinkedIn', 'img' => 'linkedin.png');
-			$arr_sites[5] = array('network' => 'Orkut', 'img' => 'Orkut.png');
-			$arr_sites[6] = array('network' => 'Zorpia', 'img' => 'zorpia.png');
-			$arr_sites[7] = array('network' => 'Netlog', 'img' => 'netlog.png');
-			$arr_sites[8] = array('network' => 'Bebo', 'img' => 'bebo.png');
-			$arr_sites[9] = array('network' => 'Hi5', 'img' => 'hi5.png');
-			$arr_sites[10] = array('network' => 'PerfSpot', 'img' => 'perfspot.png');
-			$arr_sites[11] = array('network' => 'Twitter', 'img' => 'twitter.png');
 			add_option('fmew_network_option', $arr_sites);
+		}else{
+			update_option('fmew_network_option', $arr_sites);
 		}
 		if(!get_option('fmew_message_option')){
 			add_option('fmew_message_option','yes');
@@ -185,44 +161,29 @@ class FmewOptions{
 	}
 }
 add_action('admin_menu', array('FmewOptions', 'saveoption'));
-function wpease_get_network(){
-	global $table_prefix;
-	$mysqli = @new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
-	if(@$mysqli->errno !== 0){
-		exit('can not connect mysql');
-	}
-	$query = "SELECT * FROM {$table_prefix}find_me_else_where ORDER BY show_order";
-	$result = $mysqli->query($query);
-	$num = $result->num_rows;
-	if($num > 0){
-		$i = 0;
-		while($row = $result->fetch_assoc()){
-			foreach($row as $key => $value){
-				$links[$i][$key] = $value;
-			}
-			$i++;
-		}
-	}	
-	$mysqli->close();
+function get_networks(){
     $currentstyle = get_option('fmew_current_style');
     $display = get_option('fmew_message_option');
-    if(isset($links)){
-    	echo '<div id="fmew">';
-			echo '<h3>Find me else where</h3>';
-			echo '<ul>';
-        	for($i = 0; $i < count($links); $i++){
-        		$number = 5;
-        		if(($i % $number) == 0){
-	        		echo '<li class="first"><a href="'.urldecode($links[$i]['url']).'" title="'.$links[$i]['title'].'" class="'.$links[$i]['category'].'">'.$links[$i]['title'].'</a></li>';
-        		}else{
-        			echo '<li><a href="'.urldecode($links[$i]['url']).'" title="'.$links[$i]['title'].'" class="'.$links[$i]['category'].'">'.$links[$i]['title'].'</a></li>';
-        		}
-        	}
-        	echo '</ul>';
-        	if($display == 'yes'){
-        		echo '<a class="getfmew" href="http://wpease.com/find-me-else-where" title="">Get this plugin for my blog</a>';
-        	}
-    	echo '</div>';
+    $networklinks = get_option('fmew_networklinks_option');
+    if(count($networklinks) > 0){
+    	$arr = array();
+    	foreach($networklinks as $key => $value){
+    		$arr[$value['order'].$key] = $key;
+    	}
+    	ksort($arr);
+		echo '<div id="fmew">';
+		echo '<h3>Find me else where</h3>';
+		echo '<ul class="network">';
+    	foreach ($arr as $key){
+    		$i = 0;
+    		echo '<li><a href="'.urldecode($networklinks[$key]['url']).'" title="'.$networklinks[$key]['title'].'" class="'.$networklinks[$key]['category'].'">'.$networklinks[$key]['title'].'</a></li>';
+    		$i++;
+    	}
+    	echo '</ul>';
+    	if($display == 'yes'){
+    		echo '<a class="getfmew" href="http://wpease.com/find-me-else-where" title="">Get this plugin for my blog</a>';
+    	}
+		echo '</div>';
     }           
-}
+}           
 ?>

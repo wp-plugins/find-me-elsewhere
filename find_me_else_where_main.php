@@ -8,26 +8,7 @@
 </div>
 <?php
 require('../wp-config.php');
-$mysqli = @new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
-if(@$mysqli->errno !== 0){
-	exit('can not connect mysql');
-}
-$query = "SELECT * FROM {$table_prefix}find_me_else_where ORDER BY show_order";
-$result = $mysqli->query($query);
-$num = $result->num_rows;
-if($num > 0){
-	$i = 0;
-	while($row = $result->fetch_assoc()){
-		foreach($row as $key => $value){
-			$links[$i][$key] = $value;
-		}
-		$i++;
-	}
-}
-$mysqli->close();
-$arr_sites = get_option('fmew_network_option');
 ?>
-
 <div id="fmew_admin">
 
 	<div class ="wrap">
@@ -41,6 +22,7 @@ $arr_sites = get_option('fmew_network_option');
 		<div class="select"><span>Social Networks</span></div>
 		<ul>
 			<?php
+				$arr_sites = get_option('fmew_network_option');
 				for($i = 0; $i < count($arr_sites); $i++){
 					echo '<li class="'.$arr_sites[$i]['network'].'">';
 					echo $arr_sites[$i]['network'];
@@ -70,21 +52,26 @@ $arr_sites = get_option('fmew_network_option');
 			<td>Order</td><td>Title</td><td>Url</td><td>edit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;delete</td>
 		</tr>
 		<?php
-			if(isset($links)){
-				for($i = 0; $i < count($links); $i++){
-					if(isset($_GET['id']) && $_GET['id'] == $links[$i]['id']){
+			$networklinks = (get_option('fmew_networklinks_option'))?get_option('fmew_networklinks_option'): array() ;
+			if(count($networklinks) > 0){$arr = array();
+		    	foreach($networklinks as $key => $value){
+		    		$arr[$value['order'].$key] = $key;
+		    	}
+		    	ksort($arr);
+				foreach($arr as $key){
+					if(isset($_GET['key']) && $_GET['key'] == $key){
 						echo '<tr>';
-						echo '<td><span class="'.$links[$i]['category'].'"></span><input type="text" id="mod_order" value="'.$links[$i]['show_order'].'" class="text"/></td>';
-						echo '<td><input type="text" id="mod_title" value="'.$links[$i]['title'].'" class="text"/></td>';
-						echo '<td><input type="text" id="mod_url" value="'.urldecode($links[$i]['url']).'" /></td>';
-						echo '<td><input type="button" id="edit" value="edit" onclick="edit('.$_GET['id'].')"/><a href="javascript:del('.$links[$i]['id'].')" title="delete" class="del">delete</a></td>';
+						echo '<td><span class="'.$networklinks[$key]['category'].'"></span><input type="text" id="mod_order" value="'.$networklinks[$key]['order'].'" class="text"/></td>';
+						echo '<td><input type="text" id="mod_title" value="'.$networklinks[$key]['title'].'" class="text"/></td>';
+						echo '<td><input type="text" id="mod_url" value="'.urldecode($networklinks[$key]['url']).'" /></td>';
+						echo '<td><input type="button" id="edit" value="edit" onclick="edit('.$key.')"/><a href="javascript:del('.$key.')" title="delete" class="del">delete</a></td>';
 						echo '</tr>';
 					}else{
 						echo '<tr>';
-						echo '<td><span class="'.$links[$i]['category'].'"></span>'.$links[$i]['show_order'].'</td>';
-						echo '<td>'.$links[$i]['title'].'</td>';
-						echo '<td>'.urldecode($links[$i]['url']).'</td>';
-						echo '<td><a href="admin.php?page=find-me-else-where/find_me_else_where.php&action=edit&id='.$links[$i]['id'].'" title="edit" class="edit">edit</a><a href="javascript:del('.$links[$i]['id'].')" title="delete" class="del">delete</a></td>';
+						echo '<td><span class="'.$networklinks[$key]['category'].'"></span>'.$networklinks[$key]['order'].'</td>';
+						echo '<td>'.$networklinks[$key]['title'].'</td>';
+						echo '<td>'.urldecode($networklinks[$key]['url']).'</td>';
+						echo '<td><a href="admin.php?page=find-me-elsewhere/find_me_else_where.php&action=edit&key='.$key.'" title="edit" class="edit">edit</a><a href="javascript:del('.$key.')" title="delete" class="del">delete</a></td>';
 						echo '</tr>';
 					}
 				}

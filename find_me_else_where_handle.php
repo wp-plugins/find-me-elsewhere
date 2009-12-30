@@ -1,9 +1,5 @@
 <?php
 require('../../../wp-config.php');
-$mysqli = @new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
-if(@$mysqli->errno !== 0){
-	exit('can not connect mysql');
-}
 if(isset($_POST['action'])){
 	$action = $_POST['action'];
 	if($action == 'add'){
@@ -11,33 +7,38 @@ if(isset($_POST['action'])){
 		$title = $_POST['title'];
 		$url = urlencode($_POST['url']);
 		$category = $_POST['category'];
-		$insert = "INSERT INTO {$table_prefix}find_me_else_where (show_order, title, category, url) VALUES($order, '$title', '$category', '$url')";
-		$result = $mysqli->query($insert);
-		if($result){
+		$networklink =array('order' => $order, 'title' =>$title, 'url' =>$url, 'category' => $category);
+		if( $networklinks = get_option('fmew_networklinks_option')){
+			array_push($networklinks, $networklink);
+			update_option('fmew_networklinks_option', $networklinks);
 			echo 1;
 		}else{
-			echo 'unable to insert into the database';
+			$networklinks[] = $networklink;
+			update_option('fmew_networklinks_option', $networklinks);
+			echo 1;
 		}
 	}else if($action == 'del'){
-		$id = $_POST['id'];
-		$del = "DELETE FROM {$table_prefix}find_me_else_where WHERE id=$id";
-		$del_result = $mysqli->query($del);
-		if($del_result){
+		$key = $_POST['key'];
+		if( $networklinks = get_option('fmew_networklinks_option')){
+			unset($networklinks[$key]);
+			update_option('fmew_networklinks_option', $networklinks);
 			echo 1;
 		}else{
-			echo 'Unable to delete';
+			echo 'Delete failed';
 		}
 	}else if($action == 'edit'){
 		$order = $_POST['order'];
 		$title = $_POST['title'];
 		$url = urlencode($_POST['url']);
-		$id = $_POST['id'];
-		$update = "UPDATE {$table_prefix}find_me_else_where SET show_order=$order, title='$title', url='$url' WHERE id=$id";
-		$result = $mysqli->query($update);
-		if($result){
+		$key = $_POST['key'];
+		if( $networklinks = get_option('fmew_networklinks_option')){
+			$networklinks[$key]['order'] = $order;
+			$networklinks[$key]['title'] = $title;
+			$networklinks[$key]['url'] = $url;
+			update_option('fmew_networklinks_option', $networklinks);
 			echo 1;
 		}else{
-			echo 'Unable to edit';
+			echo 'Edit Failed';
 		}
 	}else if($action == 'save_style'){
 		$style = $_POST['style'];
