@@ -9,6 +9,7 @@ Stable tag: trunk
 This plugin let you shown all your social network icons in a widget
 
 == Description ==
+Please do not use plugin now. We have fonud some bugs after we published the beta version and we are debuging . Please wait for about 24hours . Thank you for understanding.
 
 This plugin let you shown all your social network icons in a widget
 

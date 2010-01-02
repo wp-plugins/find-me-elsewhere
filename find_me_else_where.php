@@ -78,8 +78,15 @@ class FindMeElseWhereWidget extends WP_Widget {
 	    		$arr[$value['order'].$key] = $key;
 	    	}
 	    	ksort($arr);
+	    	echo $before_widget;
     		echo '<div id="fmew">';
-			echo '<h3>Find me else where</h3>';
+    		echo $before_title;
+    		if($instance['title'] != ''){
+    			echo $instance['title'];
+    		}else{
+    			echo 'Find me else where';
+    		}
+    		echo $after_title;
 			echo '<ul class="network">';
 			$i = 0;
         	foreach ($arr as $key){
@@ -100,6 +107,7 @@ class FindMeElseWhereWidget extends WP_Widget {
         		echo '<a class="getfmew" href="http://wpease.com/find-me-else-where" title="">Get this plugin for my blog</a>';
         	}
     		echo '</div>';
+    		echo $after_widget;
         }           
     }
     function update($new_instance, $old_instance) {				
