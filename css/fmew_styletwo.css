@@ -1,0 +1,160 @@
+#fmew  ul.network {
+	padding:0;
+	margin:0;
+	overflow:hidden;
+}
+#fmew ul.network li{
+	float:left;
+	width:33px;
+	height:33px;
+	padding:10px;
+	list-style:none;
+	margin:0;
+}
+#fmew ul.network li a:hover{
+	text-decoration:none;
+}
+#fmew ul.network .first{
+	padding:10px 10px 10px 0;
+	clear:both;
+}
+#fmew ul.network li a, #fmew ul.network li a:visited{
+	text-indent:-999px;
+}
+#fmew ul.network li .FaceBook{
+	display:block; 	
+	width:32px; 	
+	height:32px;
+	background:url(../images/facebook_32.png) 0 50% no-repeat;
+}
+#fmew ul.network li .FaceBook:hover{
+	background:url(../images/facebook_32.png) -37px 50% no-repeat;
+}
+#fmew ul.network li .FriendFeed{
+	display:block; 	
+	width:32px; 	
+	height:32px;
+	background:url(../images/friendfeed_32.png) 0 50% no-repeat;
+}
+#fmew ul.network li .FriendFeed:hover{
+	background:url(../images/friendfeed_32.png) -37px 50% no-repeat;
+}
+#fmew ul.network li .LinkedIn{
+	display:block; 	
+	width:32px; 	
+	height:32px;
+	background:url(../images/linkedin_32.png) 0 50% no-repeat;
+}
+#fmew ul.network li .LinkedIn:hover{
+	background:url(../images/linkedin_32.png) -37px 50% no-repeat;
+}
+#fmew ul.network li .MySpace{
+	display:block; 	
+	width:32px; 	
+	height:32px;
+	background:url(../images/myspace_32.png) 0 50% no-repeat;
+}
+#fmew ul.network li .MySpace:hover{
+	background:url(../images/myspace_32.png) -37px 50% no-repeat;
+}
+#fmew ul.network li .Friendster{
+	display:block; 	
+	width:32px; 	
+	height:32px;
+	background:url(../images/friendster_32.png) 0 50% no-repeat;
+}
+#fmew ul.network li .Friendster:hover{
+	background:url(../images/friendster_32.png) -38px 50% no-repeat;
+}
+#fmew ul.network li .Orkut{
+	display:block; 	
+	width:32px; 	
+	height:32px;
+	background:url(../images/orkut_32.png) 0 50% no-repeat;
+}
+#fmew ul.network li .Orkut:hover{
+	background:url(../images/orkut_32.png) -37px 50% no-repeat;
+}
+#fmew ul.network li .Bebo{
+	display:block; 	
+	width:32px; 	
+	height:32px;
+	background:url(../images/bebo_32.png) 0 50% no-repeat;
+}
+#fmew ul.network li .Bebo:hover{
+	background:url(../images/bebo_32.png) -38px 50% no-repeat;
+}
+#fmew ul.network li .Hi5{
+	display:block; 
+	width:32px; 	
+	height:32px;
+	background:url(../images/hi5_32.png) 0 50% no-repeat;
+}
+#fmew ul.network li .Hi5:hover{
+	background:url(../images/hi5_32.png) -38px 50% no-repeat;
+}
+#fmew ul.network li .Twitter{
+	display:block; 	
+	width:32px; 	
+	height:32px;
+	background:url(../images/twitter_32.png) 0 50% no-repeat;
+}
+#fmew ul.network li .Twitter:hover{
+	background:url(../images/twitter_32.png) -37px 50% no-repeat;
+}
+#fmew ul.network li .Flickr{
+	display:block; 	
+	width:32px; 	
+	height:32px;
+	background:url(../images/flickr_32.png) 0 50% no-repeat;
+}
+#fmew ul.network li .Flickr:hover{
+	background:url(../images/flickr_32.png) -38px 50% no-repeat;
+}
+#fmew ul.network li .Digg{
+	display:block; 	
+	width:32px; 	
+	height:32px;
+	background:url(../images/digg_32.png) 0 50% no-repeat;
+}
+#fmew ul.network li .Digg:hover{
+	background:url(../images/digg_32.png) -38px 50% no-repeat;
+}
+#fmew ul.network li .Delicious{
+	display:block; 	
+	width:32px; 	
+	height:32px;
+	background:url(../images/delicious_32.png) 0 50% no-repeat;
+}
+#fmew ul.network li .Delicious:hover{
+	background:url(../images/delicious_32.png) -38px 50% no-repeat;
+}
+#fmew h1,h2,h3,h4,h5,h6{
+	cursor:pointer;
+}
+#fmew ul.network{
+	padding:5px;
+	display:none;
+}
+#fmew li{
+	background:none;
+	list-style:none;
+}
+#fmew ul.network li a,#fmew ul.network li a:visited{
+	color:#c40322;
+	font-size:12px;
+	text-decoration:none;
+}
+#fmew ul.network li a:hover{
+	color:#f39912;
+	text-decoration:underline;
+}
+#fmew a.getfmew,#fmew a.getfmew:visited{
+	color:#c40322;
+	font-size:12px;
+	text-decoration:none;
+}
+#fmew a.getfmew:hover{
+	color:#f39912;
+	text-decoration:underline;
+}

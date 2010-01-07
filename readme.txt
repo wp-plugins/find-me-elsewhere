@@ -1,7 +1,7 @@
 === Plugin Name ===
 Contributors: Wpease team
 Donate link: http://wpease.com/
-Tags: twitter,facebook,flickr
+Tags: twitter,facebook
 Requires at least: 2.7
 Tested up to: 2.8.6
 Stable tag: trunk
