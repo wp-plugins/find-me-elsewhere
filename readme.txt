@@ -1,15 +1,22 @@
 === Plugin Name ===
 Contributors: Wpease team
 Donate link: http://wpease.com/
-Tags: twitter,facebook
+Tags: Facebook,Twitter,Friendfeed,Linkedin,Myspace,Friendster,Orkut,Bebo,Hi5,Flickr,Digg,Delicious
 Requires at least: 2.7
-Tested up to: 2.8.6
+Tested up to: 2.9.1
 Stable tag: trunk
 
 This plugin let you shown all your social network icons in a widget
 
 == Description ==
-Please do not use plugin now. We have fonud some bugs after we published the beta version and we are debuging . Please wait for about 24hours . Thank you for understanding.
+Features:
+
+    * Support 12 social networks including Facebook , Twitter , Friendfeed , Linkedin , Myspace , Friendster , Orkut , Bebo , Hi5 , Flickr , Digg and Delicious . The list of social networks is increasing
+    * Easy to manage. This plugin offers a powerful dashboard that you can manage your social network links easily.
+    * Widgetable. We integrate a widget that you can use it via drag&drop the widget to your wordpress sidebar. You do not touch the theme file and do not need any programming skill
+    * Customize easily. We offered 4 styles to fit all kinds of blogs
+    * Outstanding support We are a technical team focused on wordpress. Pls feel free to ask any question via support forum. We would reply in 24 hours weekdays and 48hours weekend
+
 
 This plugin let you shown all your social network icons in a widget
 
@@ -40,4 +47,4 @@ If you have any problem on using the plugin,please ask for help on our <a href="
 
 == Screenshots ==
 
-
+http://wpease.com/wp-content/uploads/2009/12/screenshot-wiget.jpg
