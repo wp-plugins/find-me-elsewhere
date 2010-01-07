@@ -47,4 +47,3 @@ If you have any problem on using the plugin,please ask for help on our <a href="
 
 == Screenshots ==
 
-http://wpease.com/wp-content/uploads/2009/12/screenshot-wiget.jpg
