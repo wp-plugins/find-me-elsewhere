@@ -46,4 +46,10 @@ This section describes how to install the plugin and get it working.
 If you have any problem on using the plugin,please ask for help on our <a href="http://www.wpease.com/support/viewforum.php?f=2" target="_blank">Support forum</a>.
 
 == Screenshots ==
-
+1. Social Networks
+2. Dashboard
+3. Icon Style
+4. Text Style
+5. Mouse Over Style
+6. Click Style
+7. Widget
