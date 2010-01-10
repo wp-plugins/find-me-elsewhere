@@ -3,7 +3,7 @@
 Plugin Name:Find Me Else Where
 Plugin URI:http://wpease.com/find-me-else-where
 Description:
-version:1.1
+version:1.1.0
 Author:Wpease Team.
 */
 require(ABSPATH.'wp-config.php');
