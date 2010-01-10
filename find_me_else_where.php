@@ -123,7 +123,7 @@ class FindMeElseWhereWidget extends WP_Widget {
 	        </label>
         </p>
         <p>
-        	<label for="<?php echo $this->get_field_id('number'); ?>"><?php _e('The number of lines:'); ?> 
+        	<label for="<?php echo $this->get_field_id('number'); ?>"><?php _e('Icons per lines:'); ?> 
 	        <input class="widefat" id="<?php echo $this->get_field_id('number'); ?>" name="<?php echo $this->get_field_name('number'); ?>" type="text" value="<?php echo $number; ?>" />
 	        </label>
         </p>
