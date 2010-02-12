@@ -2,12 +2,14 @@
 	padding:0;
 	margin:0;
 	overflow:hidden;
+	border:0;
 }
 #fmew ul.network li{
 	float:left;
 	padding:10px;
 	list-style:none;
 	margin:0;
+	border:0;
 }
 #fmew ul.network li a:hover{
 	text-decoration:none;

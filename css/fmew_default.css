@@ -2,12 +2,14 @@
 	padding:0;
 	margin:0;
 	overflow:hidden;
+	border:0;
 }
 #fmew ul.network li{
 	float:left;
 	padding:10px;
 	list-style:none;
 	margin:0;
+	border:0;
 }
 #fmew ul.network li a:hover{
 	text-decoration:none;
@@ -127,6 +129,47 @@
 #fmew ul.network li .Delicious:hover{
 	background:url(../images/delicious_32.png) -38px 50% no-repeat;
 }
+
+#fmew ul.network li .Buzz{
+	display:block; 	
+	width:32px; 	
+	height:32px;
+	background:url(../images/buzz_32.png) 0 50% no-repeat;
+}
+#fmew ul.network li .Buzz:hover{
+	background:url(../images/buzz_32.png) 100% 50% no-repeat;
+}
+
+#fmew ul.network li .Vimeo{
+	display:block; 	
+	width:32px; 	
+	height:32px;
+	background:url(../images/vimeo_32.png) 0 50% no-repeat;
+}
+#fmew ul.network li .Vimeo:hover{
+	background:url(../images/vimeo_32.png) 100% 50% no-repeat;
+}
+
+#fmew ul.network li .Wave{
+	display:block; 	
+	width:32px; 	
+	height:32px;
+	background:url(../images/wave_32.png) 0 50% no-repeat;
+}
+#fmew ul.network li .Wave:hover{
+	background:url(../images/wave_32.png) 100% 50% no-repeat;
+}
+
+#fmew ul.network li .Youtube{
+	display:block; 	
+	width:32px; 	
+	height:32px;
+	background:url(../images/youtube_32.png) 0 50% no-repeat;
+}
+#fmew ul.network li .Youtube:hover{
+	background:url(../images/youtube_32.png) 100% 50% no-repeat;
+}
+
 #fmew ul.network{
 	padding:5px;
 }

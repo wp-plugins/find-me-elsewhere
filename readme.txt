@@ -1,7 +1,7 @@
 === Plugin Name ===
 Contributors: Wpease team
 Donate link: http://wpease.com/
-Tags: Facebook,Twitter,Friendfeed,Linkedin,Myspace,Friendster,Orkut,Bebo,Hi5,Flickr,Digg,Delicious
+Tags: Facebook,Twitter,Friendfeed,Linkedin,Myspace,Friendster,Orkut,Bebo,Hi5,Flickr,Digg,Delicious,Google,Wave,Google Wave,Buzz,Google Buzz,Vimeo,Youtube
 Requires at least: 2.7
 Tested up to: 2.9.1
 Stable tag: trunk

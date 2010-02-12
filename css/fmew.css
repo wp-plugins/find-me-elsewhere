@@ -117,6 +117,23 @@
 #fmew_admin .Delicious{
 	background:url(../images/delicious_16.png) 10px 50% no-repeat;
 }
+#fmew_admin .Buzz{
+	background:url(../images/buzz_16.png) 10px 50% no-repeat;
+}
+#fmew_admin .Wave{
+	background:url(../images/wave_16.png) 10px 50% no-repeat;
+}
+#fmew_admin .Youtube{
+	background:url(../images/youtube_16.png) 10px 50% no-repeat;
+}
+#fmew_admin .Vimeo{
+	background:url(../images/vimeo_16.png) 10px 50% no-repeat;
+}
+
+
+
+
+
 #fmew_admin .list tr td a.del{
 	display:block;
 	width:20px;

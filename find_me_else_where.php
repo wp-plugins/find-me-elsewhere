@@ -3,7 +3,7 @@
 Plugin Name:Find Me Else Where
 Plugin URI:http://wpease.com/find-me-else-where
 Description:
-version:1.1.1
+version:1.1.2
 Author:Wpease Team.
 */
 require(ABSPATH.'wp-config.php');
@@ -147,6 +147,10 @@ class FmewOptions{
 		$arr_sites[9] = array('network' => 'Flickr');
 		$arr_sites[10] = array('network' => 'Digg');
 		$arr_sites[11] = array('network' => 'Delicious');
+		$arr_sites[12] = array('network' => 'Buzz');
+		$arr_sites[13] = array('network' => 'Wave');
+		$arr_sites[14] = array('network' => 'Youtube');
+		$arr_sites[15] = array('network' => 'Vimeo');
 		if(!get_option('fmew_network_option')){
 			add_option('fmew_network_option', $arr_sites);
 		}else{
