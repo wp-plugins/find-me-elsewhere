@@ -11,7 +11,7 @@ This plugin let you shown all your social network icons in a widget
 == Description ==
 Features:
 
-    * Support 12 social networks including Facebook , Twitter , Friendfeed , Linkedin , Myspace , Friendster , Orkut , Bebo , Hi5 , Flickr , Digg and Delicious . The list of social networks is increasing
+    * Support 16 social networks including Facebook , Twitter , Friendfeed , Linkedin , Myspace , Friendster , Orkut , Bebo , Hi5 , Flickr , Digg,vimeo,youtube,Buzz,Wave and Delicious . The list of social networks is increasing
     * Easy to manage. This plugin offers a powerful dashboard that you can manage your social network links easily.
     * Widgetable. We integrate a widget that you can use it via drag&drop the widget to your wordpress sidebar. You do not touch the theme file and do not need any programming skill
     * Customize easily. We offered 4 styles to fit all kinds of blogs
