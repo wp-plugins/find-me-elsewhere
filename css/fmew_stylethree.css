@@ -12,6 +12,7 @@
 	list-style:none;
 	margin:0;
 	border:0;
+	clear:none;
 }
 #fmew ul.network li a:hover{
 	text-decoration:none;
