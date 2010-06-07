@@ -1,0 +1,201 @@
+#fmew-options{
+	width:1228px;
+	overflow:hidden;
+}
+#fmew-options .fmew-wrap{
+	padding:0 0 30px 0;
+}
+#fmew-options .fmew-icons-container{
+	width:700px;
+	float:left;
+	margin:10px 0 0 0;
+}
+#fmew-options .fmew-default-icons{
+	margin:0;
+	background:url(../images/lefticons.png);
+}
+#fmew-options .default-icons-name{
+	height:31px;
+	background:url(../images/lefttitle.png) no-repeat;
+}
+#fmew-options .default-icons-name h3{
+	font-size:13px;
+	height:19px;
+	margin:0;
+	overflow:hidden;
+	padding:5px 12px;
+	white-space:nowrap;
+	cursor:pointer;
+	text-transform:capitalize;
+}
+#fmew-options .default-icons-name h3:hover{
+	color:#d54e21;
+}
+#fmew-options .default-icons-holder{
+	padding:0 5px 6px 16px;
+	background:url(../images/lefticons_footerbg.png) 0 100% no-repeat;
+	overflow:hidden;
+}
+#fmew-options .default-icons-holder ul{
+	list-style:none;
+	overflow:hidden;
+	height:1%;
+}
+#fmew-options .default-icons-holder ul li{
+	float:left;
+	width:252px;
+	margin:0 20px 14px 0;
+}
+#fmew-options .default-icons-holder ul li h2{
+	width:242px;
+	height:28px;
+	background:url(../images/li.png) no-repeat;
+	padding:0 0 0 10px;
+	line-height:28px;
+	font-size:12px;
+	cursor:move;
+	font-style:normal;
+	font-weight:bold;
+}
+#fmew-options .default-icons-holder ul li span{
+	float:left;
+}
+#fmew-options .default-icons-holder ul li img{
+	float:left;
+	margin:2px 15px 0 0;
+}
+#fmew-options .default-icons-holder ul li a.control{
+	display:none;
+	float:right;
+	width:25px;
+	height:28px;
+}
+#fmew-options .default-icons-holder ul li a.custom-control{
+	float:right;
+	width:25px;
+	height:28px;
+	background:url(../images/write.gif) 0 50% no-repeat;
+}
+#fmew-options .default-icons-holder  .icon-inside{
+	display:none;
+}
+#fmew-options .default-icons-holder .custom-inside{
+	background:url(../images/actived-icon-footer.png) 0 100% no-repeat;
+	padding:0 0 6px 0;
+	display:none;
+}
+#fmew-options .default-icons-holder .ajax{
+	display:none;
+}
+#fmew-options .default-icons-holder .custom-inside p{
+	background:url(../images/actived-icon-body.png);
+	height:1%;
+	margin:0;
+	overflow:hidden;
+	padding:10px 0 10px 10px;
+}
+#fmew-options .default-icons-holder .alignright {
+	float:right;
+	margin:0 15px 0 0;
+}
+#fmew-options .fmew-active-icons{
+	width:285px;
+	margin:10px 0 0 50px;
+	float:left;
+	background:url(../images/righticons.png);
+}
+#fmew-options .active-icons-name{
+	height:31px;
+	background:url(../images/righttitle.png) no-repeat;
+}
+#fmew-options .active-icons-name h3{
+	font-size:13px;
+	height:19px;
+	margin:0;
+	overflow:hidden;
+	padding:5px 12px;
+	white-space:nowrap;
+	cursor:pointer;
+	color:#fff;
+	text-transform:capitalize;
+}
+#fmew-options .active-icons-holder{
+	padding:0 5px 9px 16px;
+	background:url(../images/righticons_footerbg.png) 0 100% no-repeat;
+	overflow:hidden;
+}
+#fmew-options .active-icons-holder ul{
+	padding:18px 0 0 0 ;
+	min-height:146px;
+}
+#fmew-options .active-icons-holder ul li{
+	float:none;
+	width:252px;
+	ovflow:hidden;
+	height:1%;
+	margin:0 0 20px 0;
+	display:inline-block;
+}
+#fmew-options .active-icons-holder ul li h2{
+	width:242px;
+	height:28px;
+	background:url(../images/actived-icon.png) no-repeat;
+	padding:0 0 0 10px;
+	line-height:28px;
+	font-size:12px;
+	cursor:move;
+	font-style:normal;
+	font-weight:bold;
+}
+#fmew-options .active-icons-holder ul li span{
+	float:left;
+}
+#fmew-options .active-icons-holder ul li img{
+	float:left;
+	margin:2px 5px 0 0;
+}
+#fmew-options .active-icons-holder ul li a.control{
+	float:right;
+	width:25px;
+	height:28px;
+}
+#fmew-options .active-icons-holder ul li a.custom-control{
+	display:none;
+}
+#fmew-options .active-icons-holder .icon-inside{
+	background:url(../images/actived-icon-footer.png) 0 100% no-repeat;
+	padding:0 0 6px 0;
+}
+#fmew-options .active-icons-holder .custom-inside{
+	display:none;
+}
+#fmew-options .active-icons-holder .icon-inside p{
+	background:url(../images/actived-icon-body.png);
+	margin:0;
+	padding:10px 0 10px 10px;
+	overflow:hidden;
+	height:1%;
+}
+#fmew-options .active-icons-holder .ajax{
+	display:none;
+}
+#fmew-options .active-icons-holder .alignright{
+	float:right;
+	margin:0 15px 0 0;
+}
+#fmew-options .custom-icon label{
+	display:inline-block;
+	width:130px;
+}
+#fmew-options .custom-icon input{
+	display:inline-block;
+	width:200px;
+}
+#fmew-options #icon-name{
+	width:130px;
+}
+#fmew-options .header-ajax{
+	display:none;
+	vertical-align:bottom;
+	margin:0 0 0 10px;
+}

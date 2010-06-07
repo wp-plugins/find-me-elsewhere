@@ -1,0 +1,35 @@
+﻿/*Reset*/
+
+#sidebar #fmew-icons-widget *,#fmew-icons-widget *{
+	margin:0;
+	padding:0;
+	border:0;
+	list-style:none;
+	background:none;
+}
+
+#sidebar #fmew-icons-widget li:before,#fmew-icons-widget li:before,#sidebar ul ul li:before {
+	content: none;
+}
+
+/*Style*/
+#sidebar #fmew-icons-widget,#fmew-icons-widget{
+	overflow:hidden;
+}
+#fmew-icons-widget li,#sidebar #fmew-icons-widget li{
+	float:left;
+	padding:0 5px 5px 0;
+	clear:none;
+}
+
+#fmew-icons-widget li a,#sidebar #fmew-icons-widget li a{
+	filter: alpha(opacity=80);
+	-moz-opacity:0.8;
+	opacity: 0.8;
+}
+#fmew-icons-widget li a:hover,#sidebar #fmew-icons-widget li a:hover{
+	filter: alpha(opacity=100);
+	-moz-opacity:1;
+	opacity: 1;
+}
+
