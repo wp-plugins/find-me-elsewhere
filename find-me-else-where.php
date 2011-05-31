@@ -150,11 +150,10 @@ if(!class_exists('FindMeElseWhere')){
 ?>
 <div class="updated fade">
 	<p>
-	Notice:If you have any problem on using the plugin,please ask for help on our <a href="http://www.wpease.com/support/viewforum.php?f=2" target="_blank">Support forum</a>.
+	Notice:If you have any problem on using the plugin,please ask for help on our <a href="http://www.wpease.com/support/" target="_blank">Support forum</a>.
 	</p>
-	<p>
-	If you like this plugin and want it to be better, Please share your mind with us on how to improve it .<a href="http://www.wpease.com/support/viewforum.php?f=2" target="_blank">Support forum</a>
-	</p>
+	
+	<p>Download  <a href="http://wpease.com/" target="_blank">free pentium theme</a> by wpease team</p>
 </div>
 		<div class="wrap">
 			<div id="fmew-options">	
