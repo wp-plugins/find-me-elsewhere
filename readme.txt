@@ -20,7 +20,7 @@ Features:
 
 This plugin let you shown all your social network icons in a widget
 
-If you have any problem on using the plugin,please ask for help on our <a href="http://www.wpease.com/support/viewforum.php?f=2" target="_blank">Support forum</a>.
+If you have any problem on using the plugin,please ask for help on our <a href="http://www.wpease.com/support/" target="_blank">Support forum</a>.
 	
 If you like this plugin and want it to be better, Please share your mind with us on how to improve it .
 
@@ -43,7 +43,7 @@ This section describes how to install the plugin and get it working.
 
 == Frequently Asked Questions ==
 
-If you have any problem on using the plugin,please ask for help on our <a href="http://www.wpease.com/support/viewforum.php?f=2" target="_blank">Support forum</a>.
+If you have any problem on using the plugin,please ask for help on our <a href="http://www.wpease.com/support/" target="_blank">Support forum</a>.
 
 == Screenshots ==
 1. Appearence
